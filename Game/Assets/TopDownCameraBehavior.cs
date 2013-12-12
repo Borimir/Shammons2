@@ -10,6 +10,7 @@ public class TopDownCameraBehavior : MonoBehaviour
 		public int minHeight;
 		public int distanceBehind;
 		public int minBehind;
+		public int rotateSensitivity;
 		public bool cameraLock;
 		public bool lookAtPlayer;
 
@@ -36,8 +37,11 @@ public class TopDownCameraBehavior : MonoBehaviour
 				//pan camera
 				if (cameraLock)
 						moveCamWithPlayer ();
-				else if (!cameraLock)
-						camUnlockedPan ();
+				//else if (!cameraLock)
+				//		camUnlockedPan ();
+
+				//rotate camera
+				rotateCamera ();
 
 				//zoom camera
 				float deltaWheel = Input.GetAxis ("Mouse ScrollWheel");
@@ -89,7 +93,30 @@ public class TopDownCameraBehavior : MonoBehaviour
 						gameTransform.Translate (new Vector3 (0f, 0f, panSensitivity));
 				} else if (mousePos.y <= margin) {
 						gameTransform.Translate (new Vector3 (0f, 0f, -panSensitivity));
-				}
+				} 
+		}
+
+		void rotateCamera ()
+		{
+				Vector3 mousePos = Input.mousePosition;
+
+				Transform gameTransform = this.gameObject.transform;
+				GameObject player = GameObject.Find ("Player");
+				Vector3 playerPos = player.transform.position;
+				if (Input.GetKey (KeyCode.Q)) {
+						gameTransform.RotateAround (playerPos, Vector3.up, rotateSensitivity * Time.deltaTime);
+				} else if (Input.GetKey (KeyCode.E)) {
+						gameTransform.RotateAround (playerPos, Vector3.down, rotateSensitivity * Time.deltaTime);
+				} else if (mousePos.x >= Screen.width - margin) {
+						gameTransform.RotateAround (playerPos, Vector3.down, rotateSensitivity * Time.deltaTime);
+				} else if (mousePos.x <= margin) {
+						gameTransform.RotateAround (playerPos, Vector3.up, rotateSensitivity * Time.deltaTime);
+				} 
+//		else if (mousePos.y >= Screen.height - margin) {
+//						gameTransform.RotateAround (playerPos, Vector3.right, rotateSensitivity * Time.deltaTime);
+//				} else if (mousePos.y <= margin) {
+//						gameTransform.RotateAround (playerPos, Vector3.left, rotateSensitivity * Time.deltaTime);
+//				} 
 		}
 
 		void camLockedZoom (float deltaWheel, GameObject camera)

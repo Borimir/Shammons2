@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TopDownCameraBehavior.cs">
+    <Files>
+      <File FileName="Assets\TopDownCameraBehavior.cs" Line="72" Column="4" />
+      <File FileName="Assets\TransformFacePlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets\PlayerBehavior.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
