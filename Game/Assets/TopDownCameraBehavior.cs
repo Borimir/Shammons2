@@ -63,12 +63,13 @@ public class TopDownCameraBehavior : MonoBehaviour
 
 		void moveCamWithPlayer ()
 		{
-				GameObject player = GameObject.Find ("Player");
-				Vector3 playerPos = player.transform.position;
-				GameObject camera = GameObject.Find ("MainCameraPlane/Main Camera");
-				Transform cameraPos = camera.transform;
-				cameraPos.position = new Vector3 (playerPos.x, playerPos.y + heightAbove, playerPos.z - distanceBehind);
-			
+				if (Input.GetButton ("Horizontal") || Input.GetButton ("Vertical")) {
+						GameObject player = GameObject.Find ("Player");
+						Vector3 playerPos = player.transform.position;
+						GameObject camera = GameObject.Find ("MainCameraPlane/Main Camera");
+						Transform cameraPos = camera.transform;
+						cameraPos.position = new Vector3 (playerPos.x, playerPos.y + heightAbove, playerPos.z - distanceBehind);
+				}
 		}
 
 		void camUnlockedPan ()
