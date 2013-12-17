@@ -136,11 +136,13 @@ public class TopDownCameraBehavior : MonoBehaviour
 
 		void camUnlockedZoom (float deltaWheel, GameObject camera)
 		{
+				GameObject player = GameObject.Find ("Player");
+				Vector3 playerPos = player.transform.position;
 				int newHeightAbove = heightAbove - (int)(deltaWheel * zoomSensitivity);
 				if (newHeightAbove >= minHeight)
 						heightAbove = newHeightAbove;
 				Transform cameraPos = camera.transform;
-				cameraPos.position = new Vector3 (cameraPos.position.x, heightAbove, cameraPos.position.z);
+				cameraPos.position = new Vector3 (cameraPos.position.x, playerPos.y + heightAbove, cameraPos.position.z);
 		}
 	
 }

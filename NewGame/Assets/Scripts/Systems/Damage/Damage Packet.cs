@@ -13,7 +13,7 @@ public class DamagePacket : MonoBehaviour {
 	}
 
 	//returns the type of damage
-	public char getType(){
+	public DamageTypes getType(){
 		return type;
 	}
 }
