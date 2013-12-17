@@ -5,7 +5,7 @@ public class DamagePacket : MonoBehaviour {
 	//the numerical damage of the packet
 	private int damage;
 	//the type of damage (special)
-	private char type;
+	private DamageTypes type;
 
 	//returns the damage value
 	public int getDamage(){
