@@ -1,8 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Blends\Materials\Player_Attributes.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\NewGame\Assets\Blends\Damage Packet.cs">
     <Files>
-      <File FileName="Assets\Blends\Materials\Player_Attributes.cs" Line="5" Column="1" />
+      <File FileName="..\NewGame\Assets\Blends\Damage Packet.cs" Line="7" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
