@@ -66,12 +66,12 @@ public class CameraBehavior : MonoBehaviour
 						gameTransform.RotateAround (playerPos, Vector3.down, rotateSensitivity * Time.deltaTime);
 						rightOffset = cameraPos.position.x - playerPos.x;
 						heightAbove = cameraPos.position.y - playerPos.y;
-						distanceBehind = -(cameraPos.position.z - playerPos.z);
+						distanceBehind = (cameraPos.position.z - playerPos.z);
 				} else if (mousePos.x <= margin) {
 						gameTransform.RotateAround (playerPos, Vector3.up, rotateSensitivity * Time.deltaTime);
 						rightOffset = cameraPos.position.x - playerPos.x;
 						heightAbove = cameraPos.position.y - playerPos.y;
-						distanceBehind = -(cameraPos.position.z - playerPos.z);
+						distanceBehind = (cameraPos.position.z - playerPos.z);
 				}  
 		}
 	
