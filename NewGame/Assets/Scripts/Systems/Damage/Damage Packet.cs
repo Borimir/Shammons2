@@ -30,7 +30,7 @@ public class DamagePacket : MonoBehaviour {
 			return TreeType.MAGICAL;
 		case DamageType.NATURAL:
 			return TreeType.MAGICAL;
-			default 
+		default: 
 				Debug.Log("Something's wrong here!");
 				return TreeType.MAGICAL;
 		}

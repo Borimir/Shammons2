@@ -13,9 +13,9 @@ public class DamageCalculator{
 				//DamageTypeDamage
 				*(stats.getDamageTypeDamage(packet.getType()))
                 //Special Damage
-				*(stats.getSpecialDamage(packet.getSpecial()))
+				*(stats.getSpecialDamage(packet.getSpecialType()))
 				//Raw Damage and its factor
-				*(stats.getSpecialDamage(packet.getSpecialType)*packet.getDamage);
+				*(stats.getSpecialDamage(packet.getSpecialType()));
 	}
 	//returns the stat adjusted out going damage of an AttackPacket
 
