@@ -31,10 +31,10 @@ public class PlayerBehavior : MonoBehaviour
 						transform.Translate (Vector3.right * amountToMove);
 
 						if (amountToMove < 0) {
-								transform.localScale.Set (xScale, transform.localScale.y, transform.localScale.z);
+								//transform.localScale.Set (xScale, transform.localScale.y, transform.localScale.z);
 								Debug.Log (transform.localScale.x);
 						} else if (amountToMove > 0) {
-								transform.localScale.Set (-1 * (xScale), transform.localScale.y, transform.localScale.z);
+								//transform.localScale.Set (-1 * (xScale), transform.localScale.y, transform.localScale.z);
 								Debug.Log (transform.localScale.x);
 
 						}
