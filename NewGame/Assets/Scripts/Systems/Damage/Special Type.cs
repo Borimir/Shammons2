@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public enum DamageTypes {
+public enum SpecialType {
 	BLUNT,PIERCING,SLASHING,
 	BURN,POISON,PSYCHIC,SURGE,ICE
 };
