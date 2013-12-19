@@ -50,10 +50,13 @@ public class PlayerBehavior : MonoBehaviour
 				if (Input.GetButton ("Vertical")) {
 						Vector3 cameraForward = cameraTrans.forward;
 						Vector3 direction = new Vector3 (cameraForward.x, 0, cameraForward.z);
+
 						float amountToMoveUp = Input.GetAxisRaw ("Vertical") * playerSpeed * Time.deltaTime;
 						transform.Translate (direction * amountToMoveUp);
+
 						anim.SetBool ("isMoving", true); //Animate
 				}
+
 				if (!Input.GetButton ("Vertical") && !Input.GetButton ("Horizontal")) {
 						anim.SetBool ("isMoving", false);		
 				}
