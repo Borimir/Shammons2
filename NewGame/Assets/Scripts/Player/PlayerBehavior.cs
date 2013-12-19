@@ -58,4 +58,8 @@ public class PlayerBehavior : MonoBehaviour
 						anim.SetBool ("isMoving", false);		
 				}
 		}
+
+	public void handleAttackPacket(AttackPacket packet){
+		Debug.Log("OUCH");
+	}
 }
