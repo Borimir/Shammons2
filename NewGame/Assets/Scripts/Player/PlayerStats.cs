@@ -22,7 +22,7 @@ public class PlayerStats : MonoBehaviour {
 	private float vitality,speed;
 
 
-	private Dictionary<string,float> damageTable = new Dictionary<string,float>();
+	private Dictionary<string,float> damageTable;
 	private Dictionary<string,float> defenseTable = new Dictionary<string,float>();
 	public Dictionary<string,float> getDTable(){
 		return damageTable;
@@ -31,6 +31,8 @@ public class PlayerStats : MonoBehaviour {
 		return defenseTable;
 	}
 	void OnAwake(){
+		damageTable = new Dictionary<string, float>();
+		defenseTable = new Dictionary<string, float>();
 		damageTable.Add("B",1);
 		damageTable.Add("P",1);
 		damageTable.Add("S",1);

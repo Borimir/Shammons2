@@ -3,14 +3,15 @@ using System.Collections.Generic;
 
 public class PlayerStateHandler : MonoBehaviour {
 	private PlayerStats pStats;
-	void OnStart(){
-		pStats = ((PlayerStats)(this.gameObject.GetComponent("Player Stats")));
+	void Start(){
+		pStats = ((PlayerStats)(this.gameObject.GetComponent("PlayerStats")));
 	}
 	
 	public void handleAttackPacket(AttackPacket packet){
 		Debug.Log (packet.getAttackPacket().Count.ToString());
-		//handleDamagePacket(packet.getAttackPacket()[0]);
-		//packet.getAttackPacket().ForEach(handleDamagePackt);
+		packet.getAttackPacket().ForEach(delegate(DamagePacket dpack){
+			handleDamagePacket(dpack);
+		});
 
 	}
 
