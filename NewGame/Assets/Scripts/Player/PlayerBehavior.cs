@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class PlayerBehavior : MonoBehaviour
+
 {	
 		public float basePlayerSpeed;
 		public float sprintMultiplier;
@@ -9,7 +10,7 @@ public class PlayerBehavior : MonoBehaviour
 		private float xScale;
 		private Animator anim;
 		private GameObject playerCam;
-
+	    private
 		// Use this for initialization
 		void Start ()
 		{
@@ -62,7 +63,8 @@ public class PlayerBehavior : MonoBehaviour
 				}
 		}
 
-	public void handleAttackPacket(AttackPacket packet){
-		Debug.Log("OUCH");
+	void OnGUI(){
+
+		GUI.Box(new Rect(10,10,50,20),((PlayerStats)(this.gameObject.GetComponent("PlayerStats"))).getHealth().ToString());
 	}
 }

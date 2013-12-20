@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerStats : MonoBehaviour {
+
+	public int health;
+
 	//damage stats
 	//factor damage
 	private float damage,physical,melee,ranged,magical,chaos,elemental,natural;
@@ -17,6 +20,47 @@ public class PlayerStats : MonoBehaviour {
 
 	//other personal enhancements
 	private float vitality,speed;
+
+
+	private Dictionary<string,float> damageTable = new Dictionary<string,float>();
+	private Dictionary<string,float> defenseTable = new Dictionary<string,float>();
+	public Dictionary<string,float> getDTable(){
+		return damageTable;
+	}
+	public Dictionary<string,float> getDRTable(){
+		return defenseTable;
+	}
+	void OnAwake(){
+		damageTable.Add("B",1);
+		damageTable.Add("P",1);
+		damageTable.Add("S",1);
+		damageTable.Add ("RB",1);
+		damageTable.Add("RP",1);
+		damageTable.Add("RS",1);
+		damageTable.Add("E",1);
+		damageTable.Add("N",1);
+		damageTable.Add("C",1);
+		damageTable.Add("F",1);
+		damageTable.Add("PO",1);
+		damageTable.Add("PS",1);
+		damageTable.Add("L",1);
+		damageTable.Add("I",1);
+		defenseTable.Add("B",1);
+		defenseTable.Add("P",1);
+		defenseTable.Add("S",1);
+		defenseTable.Add ("RB",1);
+		defenseTable.Add("RP",1);
+		defenseTable.Add("RS",1);
+		defenseTable.Add("E",1);
+		defenseTable.Add("N",1);
+		defenseTable.Add("C",1);
+		defenseTable.Add("F",1);
+		defenseTable.Add("PO",1);
+		defenseTable.Add("PS",1);
+		defenseTable.Add("L",1);
+		defenseTable.Add("I",1);
+	}
+
 
 	public float getTreeDamage(TreeType type){
 	switch(type){
@@ -70,6 +114,12 @@ public class PlayerStats : MonoBehaviour {
 	}
 	}
 
+	public int getHealth(){
+		return health;
+	}
+	public void setHealth(int health){
+		this.health = health;
+	}
 	//getters and setters
 	public float getDamage(){
 		return damage;
