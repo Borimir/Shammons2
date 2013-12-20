@@ -61,7 +61,6 @@ public class PlayerStats : MonoBehaviour {
 		defenseTable.Add("PS",1);
 		defenseTable.Add("L",1);
 		defenseTable.Add("I",1);
-		Debug.Log(defenseTable["find this"]);
 	}
 
 

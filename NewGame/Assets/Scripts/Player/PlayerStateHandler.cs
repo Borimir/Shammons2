@@ -21,6 +21,5 @@ public class PlayerStateHandler : MonoBehaviour {
 		value = rTable[packet.getDI()];
 		int damage = ((int)(((packet.getDamage())/value)));
 		pStats.setHealth(pStats.getHealth()-damage);
-		Debug.Log(damage);
 	}
 }

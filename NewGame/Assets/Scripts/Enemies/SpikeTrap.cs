@@ -8,11 +8,11 @@ public class SpikeTrap : MonoBehaviour
 
 		private GameObject player;
 		private AttackPacket proxAttackPacket;
-		public float countdownInSeconds;
 		private float countdown;
 
 		void Awake ()
 		{
+		countdown = 5;
 		}
 
 		void Start ()
@@ -25,13 +25,13 @@ public class SpikeTrap : MonoBehaviour
 	
 		public void updateCountdown ()
 		{
-				countdown = countdownInSeconds * 1000;
-				countdown = -1000 * Time.deltaTime;
+				
+				countdown = countdown - Time.deltaTime;
 		}
 
 		public void resetCountdown ()
 		{
-				countdown = countdownInSeconds * 1000;
+				countdown = 5;
 		}
 
 		void FixedUpdate ()
@@ -42,6 +42,7 @@ public class SpikeTrap : MonoBehaviour
 
 						if (countdown <= 0) {
 								player.SendMessage ("handleAttackPacket", proxAttackPacket);
+				resetCountdown();
 						}
 				} else {
 						resetCountdown ();

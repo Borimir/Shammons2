@@ -63,8 +63,4 @@ public class PlayerBehavior : MonoBehaviour
 				}
 		}
 
-	void OnGUI(){
-
-		GUI.Box(new Rect(10,10,50,20),((PlayerStats)(this.gameObject.GetComponent("PlayerStats"))).getHealth().ToString());
-	}
 }
