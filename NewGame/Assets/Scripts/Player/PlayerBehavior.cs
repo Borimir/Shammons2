@@ -15,8 +15,8 @@ public class PlayerBehavior : MonoBehaviour
 		void Start ()
 		{
 				xScale = transform.localScale.x; //Get correct starting Orientation for player.
-				anim = (Animator)gameObject.GetComponent ("Animator"); //Get Animations for character
-				Debug.Log (xScale);
+//				anim = (Animator)gameObject.GetComponent ("Animator"); //Get Animations for character
+//				Debug.Log (xScale);
 				playerCam = GameObject.Find ("Main Camera");
 		}
 	
@@ -39,13 +39,13 @@ public class PlayerBehavior : MonoBehaviour
 
 						if (amountToMove < 0) {
 								//transform.localScale.Set (xScale, transform.localScale.y, transform.localScale.z);
-								Debug.Log (transform.localScale.x);
+//								Debug.Log (transform.localScale.x);
 						} else if (amountToMove > 0) {
 								//transform.localScale.Set (-1 * (xScale), transform.localScale.y, transform.localScale.z);
-								Debug.Log (transform.localScale.x);
+//								Debug.Log (transform.localScale.x);
 
 						}
-						anim.SetBool ("isMoving", true); //Animate
+//						anim.SetBool ("isMoving", true); //Animate
 				}
 		
 				if (Input.GetButton ("Vertical")) {
@@ -55,11 +55,11 @@ public class PlayerBehavior : MonoBehaviour
 						float amountToMoveUp = Input.GetAxisRaw ("Vertical") * playerSpeed * Time.deltaTime;
 						transform.Translate (direction * amountToMoveUp);
 
-						anim.SetBool ("isMoving", true); //Animate
+//						anim.SetBool ("isMoving", true); //Animate
 				}
 
 				if (!Input.GetButton ("Vertical") && !Input.GetButton ("Horizontal")) {
-						anim.SetBool ("isMoving", false);		
+//						anim.SetBool ("isMoving", false);		
 				}
 		}
 

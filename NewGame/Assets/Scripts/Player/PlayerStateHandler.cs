@@ -16,10 +16,11 @@ public class PlayerStateHandler : MonoBehaviour {
 	}
 
 	public void handleDamagePacket(DamagePacket packet){
-		float value = 0;
+		float value;
 		Dictionary<string,float> rTable = pStats.getDRTable();
-		rTable.TryGetValue(packet.getDI(),out value);
-		int damage = ((int)((packet.getDamage()/(value))));
+		value = rTable[packet.getDI()];
+		int damage = ((int)(((packet.getDamage())/value)));
 		pStats.setHealth(pStats.getHealth()-damage);
+		Debug.Log(damage);
 	}
 }

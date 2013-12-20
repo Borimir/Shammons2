@@ -23,14 +23,14 @@ public class PlayerStats : MonoBehaviour {
 
 
 	private Dictionary<string,float> damageTable;
-	private Dictionary<string,float> defenseTable = new Dictionary<string,float>();
+	private Dictionary<string,float> defenseTable;
 	public Dictionary<string,float> getDTable(){
 		return damageTable;
 	}
 	public Dictionary<string,float> getDRTable(){
 		return defenseTable;
 	}
-	void OnAwake(){
+	void Awake(){
 		damageTable = new Dictionary<string, float>();
 		defenseTable = new Dictionary<string, float>();
 		damageTable.Add("B",1);
@@ -61,6 +61,7 @@ public class PlayerStats : MonoBehaviour {
 		defenseTable.Add("PS",1);
 		defenseTable.Add("L",1);
 		defenseTable.Add("I",1);
+		Debug.Log(defenseTable["find this"]);
 	}
 
 
